@@ -159,3 +159,15 @@ select {
         opacity: 1;
     }
 }
+
+.main1-wrap {
+    background-color: #F1F1F2; display: flex;
+}
+
+.main1-left, .main1-right {
+    width: 42%; margin-right: 8%; align-self: center;
+}
+
+.main1-left {
+    text-align: center;
+}

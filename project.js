@@ -1,20 +1,51 @@
-const popup = document.getElementById('mypopup'),
-    popupToggle = document.querySelector('.header-btn'),
+let popup = document.getElementById('mypopup'),
+    popupToggle = document.getElementById('kkkk'),
     popupClose = document.querySelector('.close')
 
-    const togglePopup = () => {
-        if(popup.classList.contains('active')) {
-            popup.classList.remove('active')
-        } else {
-            popup.classList.add('active')
-        }
+popupToggle.onclick = function() {
+    popup.style.display = 'block'
+};
+
+popupClose.onclick = function() {
+    popup.style.display = 'none'
+}
+
+window.onclick = function(e) {
+    if(e.target == popup) {
+        popup.style.display = 'none'
+    }
+}
+
+var slideIndex = 1;
+showSlides(slideIndex);
+
+function plusSlides(n) {
+   showSlides(slideIndex += n);
+}
+
+function currentSlide(n) {
+    showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+    var i;
+    var slides = document.getElementsByClassName("mySlides");
+    var dots = document.getElementsByClassName("dot")
+
+    if(n > slides.length) {
+        slideIndex = 1
+    }
+    if(n < 1) {
+        slideIndex = slides.length
+    }
+    for(i=0; i < slides.length; i++) {
+        slides[i].style.display='none'
+    }
+    for(i = 0; i < dots.length; i++) {
+        dots[i].className = dots[i].className.replace("active","");
     }
 
-    popupToggle.addEventListener('click', togglePopup)
-    popupClose.addEventListener('click', togglePopup)
-    window.addEventListener('click', (e) => {
-        if(e.target === popup) {
-            togglePopup()
-        }
-    })
+    slides[slideIndex-1].style.display='block';
+    dots[slideIndex-1].className += "active";
+}
 

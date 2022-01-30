@@ -69,11 +69,7 @@ select {
     display: flex; justify-content: space-between; margin: 15px 20px; align-items: center;
 }
 
-.header-logo {
-    width: 144px;
-}
-
-.menuhead {
+.menuhead ul {
     display: flex; list-style-type: none; flex-wrap: wrap; align-items: center;
 }
 
@@ -81,9 +77,13 @@ select {
     text-decoration: none; font-size: 18px; font-weight: 400; padding: 10px; color: black; margin-right: 10px;
 }
 
-.header-btn {
+.firsttt {
+    margin-left: 50px;
+}
+
+.kkkk {
     border: 1px solid #F7941E; border-radius: 6px; padding: 10px 30px; text-decoration: none; color:#F7941E;
-     font-size: 18px; font-weight: 300; background-color: white; width: 144px;
+     font-size: 18px; font-weight: 300; background-color: white; cursor: pointer;
 }
 
 .popup {
@@ -147,10 +147,6 @@ select {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.4) 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     animation-name: animatetop;
     animation-duration: 0.4 s; 
-}
-
-.popup.active {
-    display: block;
 }
 
 @keyframes animatetop {

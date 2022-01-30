@@ -1,17 +1,20 @@
-let popup = document.getElementById('mypopup'),
-    popupToggle = document.getElementById('kkkk'),
+const popup = document.getElementById('mypopup'),
+    popupToggle = document.querySelector('.header-btn'),
     popupClose = document.querySelector('.close')
 
-popupToggle.onclick = function() {
-    popup.style.display = 'block'
-};
-
-popupClose.onclick = function() {
-    popup.style.display = 'none'
-}
-
-window.onclick = function(e) {
-    if(e.target == popup) {
-        popup.style.display = 'none'
+    const togglePopup = () => {
+        if(popup.classList.contains('active')) {
+            popup.classList.remove('active')
+        } else {
+            popup.classList.add('active')
+        }
     }
-}
+
+    popupToggle.addEventListener('click', togglePopup)
+    popupClose.addEventListener('click', togglePopup)
+    window.addEventListener('click', (e) => {
+        if(e.target === popup) {
+            togglePopup()
+        }
+    })
+

@@ -18,32 +18,10 @@ const popup = document.getElementById('mypopup'),
         }
     })
 
-    let slideIndex = 1;
-setSlides(slideIndex);
+    /* slider */
 
-next.addEventListener('click', () => showSlides(slideIndex += 1))
-prev.addEventListener('click', () => showSlides(slideIndex += -1))
-
-var slides = document.getElementsByClassName("mySlides");
-    var dots = document.getElementsByClassName("dot")
-
-function setSlides(n) {
-
-    if(n > slides.length) {
-        slideIndex = 1
-    }
-    if(n < 1) {
-        slideIndex = slides.length
-    }
-    for(let i = 0; i < slides.length; i++) {
-        slides[i].style.display='none'
-    }
-    for(let i = 0; i < dots.length; i++) {
-        dots[i].className = dots[i].className.replace("active","");
-    }
-
-    slides[slideIndex-1].style.display='block';
-    dots[slideIndex-1].className += "active";
-}
-
-console.log;
+$('.slider-wrapper').owlCarousel({
+    items: 1,
+    loop: true,
+    autoplay: true
+})
